@@ -3,8 +3,14 @@ Git is free software.
 Git is free software distributed under GPL.
 Git has a mutable index called stage
 Git tracks not file but changes that is why the Git better than other version control system.
-
+/************创建版本库*************/
+0.创建一个版本库非常简单，首先，选择一个合适的地方，创建一个空目录：
+$ mkdir learngit
+$ cd learngit
+$ pwd    /*pwd命令用于显示当前目录*/
+/Users/michael/learngit
 1.init :git init
+/**************文件管理*********************/
 2.add: git add <file>
 3.commit: git commit -m <message>
 4.show the workspace's status: git status
@@ -31,6 +37,7 @@ Git tracks not file but changes that is why the Git better than other version co
 13.delete file in stage: rm <file name>
 14.delete file in workspace<命令git rm用于删除一个文件。如果一个文件已经被提交到版本库，那么你永远不用担心误删，
 但是要小心，你只能恢复文件到最新版本，你会丢失最近一次提交后你修改的内容。>: 1)git rm <file name> 2)git commit
+/********************远程仓库***************************/
 15.…or create a new repository on the command line
     echo "# learningGit" >> README.md
     git init
@@ -46,5 +53,16 @@ Git tracks not file but changes that is why the Git better than other version co
 	要关联一个远程库，使用命令git remote add origin git@server-name:path/repo-name.git；
 	关联后，使用命令git push -u origin master第一次推送master分支的所有内容；
 	此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改；
-
-
+16.clone from the origin: git clone git@github.com:<your github account name>/<your repository name>.git
+    如果有多个人协作开发，那么每个人各自从远程克隆一份就可以了。你也许还注意到，GitHub给出的地址不止一个，
+	还可以用https://github.com/michaelliao/gitskills.git这样的地址。Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议。
+	使用https除了速度慢以外，还有个最大的麻烦是每次推送都必须输入口令，但是在某些只开放http端口的公司内部就无法使用ssh协议而只能用https。
+	要克隆一个仓库，首先必须知道仓库的地址，然后使用git clone命令克隆。
+	Git支持多种协议，包括https，但通过ssh支持的原生git协议速度最快。<使用http协议时git 命令最后不需要.git>
+/**************************分支管理*************************************/
+17.build a branch: git checkout -b <branch name>
+    git checkout命令加上-b参数表示创建并切换，相当于以下两条命令：
+	$ git branch dev
+	$ git checkout dev
+	Switched to branch 'dev'
+18.show branch: git branch
