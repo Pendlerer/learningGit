@@ -1,7 +1,8 @@
 Git is a version control system.
 Git is free software.
 Git is free software distributed under GPL.
-what the fuck.
+Git has a mutable index called stage
+Git tracks not file but changes that is why the Git better than other version control system.
 
 1.init :git init
 2.add: git add <file>
@@ -10,3 +11,4 @@ what the fuck.
 5.show something it was changed: git diff
 6.log: git log <--pretty=oneline>
 7.reset : git reset --hard HEAD^< or HEAD^^ or HEAD~100 or commit version number> 
+8.log your ever command< it cound found your lastest commit version>: git reflog
