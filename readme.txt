@@ -1,5 +1,6 @@
 Git is a version control system.
 Git is free software
+Git is free software distributed under GPL
 
 1.init :git init
 2.add: git add <file>
