@@ -79,4 +79,19 @@ $ pwd    /*pwd命令用于显示当前目录*/
 22.当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。
    解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。
    用git log --graph命令可以看到分支合并图。
-now we are in the new branch named dev, wo add somwthing on this branch and commit it to repository.
+23.merge with --no-ff: git merge --no-ff -m "merge with no-ff" dev
+    分支策略:在实际开发中，我们应该按照几个基本原则进行分支管理：
+	首先，master分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活；
+	那在哪干活呢？干活都在dev分支上，也就是说，dev分支是不稳定的，到某个时候，
+	比如1.0版本发布时，再把dev分支合并到master上，在master分支发布1.0版本；
+	你和你的小伙伴们每个人都在dev分支上干活，每个人都有自己的分支，时不时地往dev分支上合并就可以了。
+	Git分支十分强大，在团队开发中应该充分应用。
+	合并分支时，加上--no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，
+	而fast forward合并就看不出来曾经做过合并。
+24.save workspace: git stash
+25.show stash； git stash list
+26.recovery workspace but not dalete stash: git stash apply
+    你可以多次stash，恢复的时候，先用git stash list查看，然后恢复指定的stash，
+    用命令：git stash apply stash@{0}
+27.delete stash: git stash drop
+28.recovery workspace and dele stash: git stash pop
