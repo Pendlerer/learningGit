@@ -67,4 +67,13 @@ $ pwd    /*pwd命令用于显示当前目录*/
 	Switched to branch 'dev'
 18.show branch: git branch
 19.Switched to branch 'master': git checkout master
-i am a big big girl in the big big world it is not a big big things if you leave me.
+20.合并指定分支到当前分支: git merge <待合并分支名>
+21.delete branch: git branch -d <branch name>
+    Git鼓励大量使用分支：
+	查看分支：git branch
+	创建分支：git branch <name>
+	切换分支：git checkout <name>
+	创建+切换分支：git checkout -b <name>
+	合并某分支到当前分支：git merge <name>
+	删除分支：git branch -d <name>
+creating a new branch is quick and simple
