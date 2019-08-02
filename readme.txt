@@ -12,3 +12,4 @@ Git tracks not file but changes that is why the Git better than other version co
 6.log: git log <--pretty=oneline>
 7.reset : git reset --hard HEAD^< or HEAD^^ or HEAD~100 or commit version number> 
 8.log your ever command< it cound found your lastest commit version>: git reflog
+9.to show the distinguiash between workspace and reporsitory: git diff HEAD -- <file name>
