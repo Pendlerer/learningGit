@@ -31,4 +31,20 @@ Git tracks not file but changes that is why the Git better than other version co
 13.delete file in stage: rm <file name>
 14.delete file in workspace<命令git rm用于删除一个文件。如果一个文件已经被提交到版本库，那么你永远不用担心误删，
 但是要小心，你只能恢复文件到最新版本，你会丢失最近一次提交后你修改的内容。>: 1)git rm <file name> 2)git commit
-15.
+15.…or create a new repository on the command line
+    echo "# learningGit" >> README.md
+    git init
+    git add README.md
+    git commit -m "first commit"
+    git remote add origin git@github.com:Pendlerer/learningGit.git
+    git push -u origin master
+  …or push an existing repository from the command line
+    git remote add origin git@github.com:Pendlerer/learningGit.git
+    git push -u origin master
+  …or import code from another repository
+    You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+	要关联一个远程库，使用命令git remote add origin git@server-name:path/repo-name.git；
+	关联后，使用命令git push -u origin master第一次推送master分支的所有内容；
+	此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改；
+
+
