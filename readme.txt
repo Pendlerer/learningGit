@@ -3,6 +3,7 @@ Git is free software.
 Git is free software distributed under GPL.
 Git has a mutable index called stage
 Git tracks not file but changes that is why the Git better than other version control system.
+my stupid boss still prefers svn
 
 1.init :git init
 2.add: git add <file>
