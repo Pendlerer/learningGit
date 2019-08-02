@@ -8,4 +8,5 @@ what the fuck.
 3.commit: git commit -m <message>
 4.show the workspace's status: git status
 5.show something it was changed: git diff
-6.log； git log <--pretty=oneline>
+6.log: git log <--pretty=oneline>
+7.reset : git reset --hard HEAD^< or HEAD^^ or HEAD~100 or commit version number> 
