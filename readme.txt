@@ -66,3 +66,5 @@ $ pwd    /*pwd命令用于显示当前目录*/
 	$ git checkout dev
 	Switched to branch 'dev'
 18.show branch: git branch
+19.Switched to branch 'master': git checkout master
+i am a big big girl in the big big world it is not a big big things if you leave me.
