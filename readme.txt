@@ -95,3 +95,51 @@ $ pwd    /*pwd命令用于显示当前目录*/
     用命令：git stash apply stash@{0}
 27.delete stash: git stash drop
 28.recovery workspace and dele stash: git stash pop
+29.开发一个新feature，最好新建一个分支；如果要丢弃一个没有被合并过的分支，
+    可以通过git branch -D <name>强行删除。
+30.show remote repository name: git remote< or git remote -v>
+31.push branch: git push origin master< branch name that wait to be pushed>
+    但是，并不是一定要把本地分支往远程推送，那么，哪些分支需要推送，哪些不需要呢？
+	    master分支是主分支，因此要时刻与远程同步； 
+		dev分支是开发分支，团队所有成员都需要在上面工作，所以也需要与远程同步；
+		bug分支只用于在本地修复bug，就没必要推到远程了，除非老板要看看你每周到底修复了几个bug；
+		feature分支是否推到远程，取决于你是否和你的小伙伴合作在上面开发。
+	总之，就是在Git中，分支完全可以在本地自己藏着玩，是否推送，视你的心情而定！
+32.创建远程origin的dev分支到本地: git checkout -b dev origin/dev
+34.因此，多人协作的工作模式通常是这样：
+    首先，可以试图用git push origin <branch-name>推送自己的修改；
+    如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并；
+    如果合并有冲突，则解决冲突，并在本地提交；
+    没有冲突或者解决掉冲突后，再用git push origin <branch-name>推送就能成功！
+    如果git pull提示no tracking information，则说明本地分支和远程分支的链接关系没有创建，
+	用命令git branch --set-upstream-to <branch-name> origin/<branch-name>。
+    这就是多人协作的工作模式，一旦熟悉了，就非常简单。
+    小结
+    查看远程库信息，使用git remote -v；
+    本地新建的分支如果不推送到远程，对其他人就是不可见的；
+    从本地推送分支，使用git push origin branch-name，如果推送失败，先用git pull抓取远程的新提交；
+    在本地创建和远程分支对应的分支，使用git checkout -b branch-name origin/branch-name，本地和远程分支的名称最好一致；
+    建立本地分支和远程分支的关联，使用git branch --set-upstream branch-name origin/branch-name；
+    从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。
+35.rebase操作可以把本地未push的分叉提交历史整理成直线: git rebase
+    rebase的目的是使得我们在查看历史提交的变化时更容易，因为分叉的提交需要三方对比。
+	作者这个教程中,省略了一堆操作,前面至少要有一个人先提交同一个文件,
+	造成此时要操作的本地git库与远程不符,再在本地git进行提交操作.
+	并且,重要的是作者并没有写出git rebase处理过程,使用git rebase之后,
+	只是返回冲突出现的提交处的commit,之后要在这个commit中进行解决冲突;
+	再使用git add操作添加好要解决冲突后的文件,之后还要再执行一次git rebase --continu,
+	到此git rebase衍合过程才真正结束;
+36.命令git tag <tagname>用于新建一个标签，默认为HEAD，也可以指定一个commit id；
+    命令git tag -a <tagname> -m "blablabla..."可以指定标签信息；
+	命令git tag可以查看所有标签。
+	可以用git show <tagname>查看标签信息
+37.delete tag: git tag -d <tag name>
+   push tag: git push origin <tagname>
+   push all unpushed tags: git push origin --tags
+   delete tag on origin:1)delete local tag:git tag -d <tagname>;2)delete origin tag:git push origin :refs/tags/<tagname>
+38.在GitHub上，可以任意Fork开源仓库；
+    己拥有Fork后的仓库的读写权限；
+	可以推送pull request给官方仓库来贡献代码。
+39.忽略某些文件时，需要编写.gitignore；
+    .gitignore文件本身要放到版本库里，并且可以对.gitignore做版本管理！
+
